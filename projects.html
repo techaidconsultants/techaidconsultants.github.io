@@ -3,7 +3,6 @@
      =========================== -->
 
 <style>
-  /* ===== TechAid Brand Styling ===== */
   :root {
     --tac-primary: #0A3D62;
     --tac-accent: #3C6382;
@@ -20,7 +19,7 @@
     padding: 0;
   }
 
-  /* ===== Header ===== */
+  /* Header */
   .tac-header {
     background: #fff;
     padding: 20px 40px;
@@ -35,7 +34,6 @@
     font-size: 26px;
     font-weight: 700;
     color: var(--tac-primary);
-    letter-spacing: 0.5px;
   }
 
   .tac-nav a {
@@ -50,9 +48,9 @@
     color: var(--tac-accent);
   }
 
-  /* ===== Page Container ===== */
+  /* Page Container */
   .tac-container {
-    max-width: 900px;
+    max-width: 1000px;
     margin: 40px auto;
     background: #fff;
     padding: 40px;
@@ -72,7 +70,54 @@
     line-height: 1.6;
   }
 
-  /* ===== Form Styling ===== */
+  /* Project Cards */
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+  }
+
+  .project-card {
+    background: #fff;
+    border: 1px solid var(--tac-border);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    transition: 0.2s;
+  }
+
+  .project-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  }
+
+  .project-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+  }
+
+  .project-card-content {
+    padding: 20px;
+  }
+
+  .project-card-content h3 {
+    margin: 0 0 10px;
+    color: var(--tac-primary);
+  }
+
+  .project-card-content a {
+    color: var(--tac-accent);
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .project-card-content a:hover {
+    text-decoration: underline;
+  }
+
+  /* Form Styling */
   label {
     display: block;
     margin-bottom: 6px;
@@ -98,7 +143,6 @@
 
   textarea {
     min-height: 140px;
-    resize: vertical;
   }
 
   button {
@@ -109,7 +153,6 @@
     border-radius: 8px;
     font-size: 16px;
     cursor: pointer;
-    transition: 0.2s;
     width: 100%;
     font-weight: 600;
   }
@@ -123,10 +166,8 @@
   }
 </style>
 
-<!-- ===== Header Section ===== -->
 <header class="tac-header">
   <div class="tac-logo">TechAid Consultants</div>
-
   <nav class="tac-nav">
     <a href="index.html">Home</a>
     <a href="services.html">Services</a>
@@ -140,55 +181,41 @@
      =========================== -->
 <div class="tac-container">
   <h2>Our Projects</h2>
-  <p>Below is a selection of recent work delivered by TechAid Consultants. We specialise in engineering documentation, compliance, technical advisory, and project support across Australia.</p>
+  <p>A selection of recent work delivered by TechAid Consultants across Australia.</p>
 
-  <ul style="line-height: 1.9; font-size: 17px;">
-    <li><strong>Structural Compliance Review – QLD</strong><br>Full documentation audit and engineering compliance verification.</li>
-    <li><strong>Technical Advisory – NSW</strong><br>Consulting support for infrastructure upgrades and safety improvements.</li>
-    <li><strong>Engineering Documentation Package – VIC</strong><br>Complete technical documentation for regulatory submission.</li>
-    <li><strong>Project Management Support – WA</strong><br>Oversight and coordination of multi‑disciplinary engineering teams.</li>
-  </ul>
-</div>
+  <div class="projects-grid">
 
-<!-- ===========================
-     CONTACT + MEETING FORM
-     =========================== -->
-<div class="tac-container">
-  <h2>Book a Meeting (Google Meet)</h2>
-  <p>Please provide two optional meeting times. We will confirm the one that best fits our schedule and send a Google Meet link from <strong>techaidconsultants@gmail.com</strong>.</p>
-
-  <form action="https://formspree.io/f/mrpbayqo" method="POST">
-
-    <label for="name">Full Name</label>
-    <input type="text" id="name" name="name" required>
-
-    <label for="role">Role / Position</label>
-    <input type="text" id="role" name="role" placeholder="e.g., Director, Project Manager" required>
-
-    <label for="email">Email</label>
-    <input type="email" id="email" name="email" required>
-
-    <label for="phone">Phone (optional)</label>
-    <input type="text" id="phone" name="phone">
-
-    <label for="slot1">Preferred Meeting Slot #1</label>
-    <input type="datetime-local" id="slot1" name="slot1" required>
-
-    <label for="slot2">Preferred Meeting Slot #2</label>
-    <input type="datetime-local" id="slot2" name="slot2">
-
-    <label for="message">Message / Project Details</label>
-    <textarea id="message" name="message" required></textarea>
-
-    <div class="honeypot">
-      <label>Leave this field empty</label>
-      <input type="text" name="_gotcha">
+    <!-- Project 1 -->
+    <div class="project-card">
+      <img src="https://images.unsplash.com/photo-1581091870627-3a0fa0e5f5c7" alt="Engineering Project">
+      <div class="project-card-content">
+        <h3>Structural Compliance Review – QLD</h3>
+        <p>Full documentation audit and engineering compliance verification.</p>
+        <a href="https://example.com/project1" target="_blank">View Project</a>
+      </div>
     </div>
 
-    <button type="submit">Request Meeting</button>
-  </form>
+    <!-- Project 2 -->
+    <div class="project-card">
+      <img src="https://images.unsplash.com/photo-1520607162513-777d3c0f0d4a" alt="Technical Advisory">
+      <div class="project-card-content">
+        <h3>Technical Advisory – NSW</h3>
+        <p>Consulting support for infrastructure upgrades and safety improvements.</p>
+        <a href="https://example.com/project2" target="_blank">View Project</a>
+      </div>
+    </div>
 
-  <p style="margin-top:20px; font-size:14px; color:var(--tac-accent);">
-    Once reviewed, we will confirm the meeting and send a Google Meet link to your email.
-  </p>
-</div>
+    <!-- Project 3 -->
+    <div class="project-card">
+      <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e" alt="Documentation Package">
+      <div class="project-card-content">
+        <h3>Engineering Documentation Package – VIC</h3>
+        <p>Complete technical documentation for regulatory submission.</p>
+        <a href="https://example.com/project3" target="_blank">View Project</a>
+      </div>
+    </div>
+
+    <!-- Project 4 -->
+    <div class="project-card">
+      <img src="https://images.unsplash.com/photo-1486401899868-0e6680f0f62c" alt="Project Management">
+      <div class="project-card-content">
