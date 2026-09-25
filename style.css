@@ -1,0 +1,77 @@
+/* TAC Premium Professional Styling */
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #FFFFFF;
+}
+
+.tac-logo {
+  width: 120px;
+  margin-bottom: 20px;
+}
+
+.tac-hero {
+  text-align: center;
+  padding: 120px 20px;
+  background: #0F3D2E; /* Deep Green */
+  color: #F7F7F2; /* Off-White */
+}
+
+.tac-hero h1 {
+  font-size: 48px;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.tac-hero p {
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+
+.tac-btn {
+  background: #D4A65A; /* Sand Gold */
+  padding: 14px 28px;
+  border-radius: 6px;
+  color: #000000;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.tac-section {
+  padding: 60px 20px;
+  max-width: 900px;
+  margin: auto;
+  color: #000000;
+}
+
+.tac-section h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #0F3D2E;
+}
+
+.tac-section h3 {
+  font-size: 24px;
+  margin-top: 30px;
+  color: #0F3D2E;
+}
+
+.tac-list {
+  list-style: none;
+  padding: 0;
+}
+
+.tac-list li {
+  background: #F7F7F2; /* Off-White */
+  padding: 18px;
+  margin-bottom: 12px;
+  border-left: 6px solid #D4A65A; /* Gold accent */
+  border-radius: 6px;
+  font-size: 18px;
+}
+
+.tac-contact {
+  text-align: center;
+}
