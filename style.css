@@ -1,77 +1,114 @@
-/* TAC Premium Professional Styling */
+:root {
+  --tac-primary: #0F3D2E;   /* Deep Green */
+  --tac-accent: #D4A65A;    /* Sand Gold */
+  --tac-light: #F7F7F2;     /* Off-White */
+  --tac-text: #2C3E50;      /* Dark Grey */
+}
 
 body {
+  font-family: 'Segoe UI', 'Inter', sans-serif;
   margin: 0;
-  font-family: Arial, sans-serif;
-  background: #FFFFFF;
+  background: var(--tac-light);
+  color: var(--tac-text);
+}
+
+/* Header */
+.tac-header {
+  background: #fff;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid var(--tac-accent);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 
 .tac-logo {
-  width: 120px;
-  margin-bottom: 20px;
-}
-
-.tac-hero {
-  text-align: center;
-  padding: 120px 20px;
-  background: #0F3D2E; /* Deep Green */
-  color: #F7F7F2; /* Off-White */
-}
-
-.tac-hero h1 {
-  font-size: 48px;
-  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  font-size: 22px;
   font-weight: 700;
+  color: var(--tac-primary);
 }
 
-.tac-hero p {
-  font-size: 20px;
-  margin-bottom: 30px;
+.tac-logo img {
+  height: 40px;
+  margin-right: 10px;
 }
 
-.tac-btn {
-  background: #D4A65A; /* Sand Gold */
-  padding: 14px 28px;
-  border-radius: 6px;
-  color: #000000;
-  font-weight: bold;
+.tac-nav a {
+  margin-left: 25px;
   text-decoration: none;
+  color: var(--tac-primary);
+  font-weight: 600;
 }
 
-.tac-section {
-  padding: 60px 20px;
-  max-width: 900px;
-  margin: auto;
-  color: #000000;
+.tac-nav a:hover {
+  color: var(--tac-accent);
 }
 
-.tac-section h2 {
-  font-size: 32px;
-  margin-bottom: 20px;
-  text-align: center;
-  color: #0F3D2E;
+/* Hero / Container */
+.tac-container {
+  max-width: 1000px;
+  margin: 40px auto;
+  background: #fff;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.06);
 }
 
-.tac-section h3 {
-  font-size: 24px;
-  margin-top: 30px;
-  color: #0F3D2E;
+h1, h2 {
+  color: var(--tac-primary);
 }
 
-.tac-list {
-  list-style: none;
-  padding: 0;
-}
-
-.tac-list li {
-  background: #F7F7F2; /* Off-White */
-  padding: 18px;
-  margin-bottom: 12px;
-  border-left: 6px solid #D4A65A; /* Gold accent */
+.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  background: var(--tac-accent);
+  color: #000;
   border-radius: 6px;
-  font-size: 18px;
+  text-decoration: none;
+  font-weight: 600;
+  margin-top: 20px;
 }
 
-.tac-contact {
-  text-align: center;
+.btn:hover {
+  background: var(--tac-primary);
+  color: #fff;
 }
+
+/* Projects Grid */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.project-card {
+  background: #fff;
+  border: 1px solid var(--tac-accent);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.project-card h3 {
+  margin-top: 0;
+  color: var(--tac-primary);
+}
+
+/* Footer */
+footer {
+  background: var(--tac-primary);
+  color: #fff;
+  text-align: center;
+  padding: 30px 20px;
+  margin-top: 40px;
+}
+
+footer a {
+  color: var(--tac-accent);
+  text-decoration: underline;
+}
+
