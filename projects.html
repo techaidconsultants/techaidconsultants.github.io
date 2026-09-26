@@ -1,182 +1,74 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>TechAid Consultants – Projects</title>
+  <style>
+    :root {
+      --tac-primary: #0A3D62;
+      --tac-accent: #3C6382;
+      --tac-light: #f5f7fa;
+      --tac-text: #2c3e50;
+      --tac-border: #dfe6e9;
+    }
+    body {
+      font-family: 'Inter','Segoe UI',sans-serif;
+      background: var(--tac-light);
+      color: var(--tac-text);
+      margin: 0;
+    }
+    /* Header */
+    .tac-header {
+      background:#fff; padding:20px 40px;
+      display:flex; justify-content:space-between; align-items:center;
+      border-bottom:1px solid var(--tac-border);
+      box-shadow:0 2px 10px rgba(0,0,0,0.05);
+    }
+    .tac-logo {font-size:26px;font-weight:700;color:var(--tac-primary);}
+    .tac-nav a {margin-left:25px;text-decoration:none;color:var(--tac-primary);font-weight:600;}
+    .tac-nav a:hover {color:var(--tac-accent);}
+    /* Container */
+    .tac-container {
+      max-width:1000px;margin:40px auto;background:#fff;padding:40px;
+      border-radius:12px;box-shadow:0 8px 20px rgba(0,0,0,0.06);
+    }
+    h2 {color:var(--tac-primary);margin-bottom:10px;font-size:28px;font-weight:600;}
+    p {margin-bottom:25px;line-height:1.6;}
+    /* Projects Grid */
+    .projects-grid {
+      display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:25px;margin-top:30px;
+    }
+    .project-card {
+      background:#fff;border:1px solid var(--tac-border);
+      border-radius:12px;overflow:hidden;
+      box-shadow:0 4px 12px rgba(0,0,0,0.05);
+      transition:0.2s;
+    }
+    .project-card:hover {transform:translateY(-4px);}
+    .project-card img {width:100%;height:180px;object-fit:cover;}
+    .project-card-content {padding:20px;}
+    .project-card-content h3 {margin:0 0 10px;color:var(--tac-primary);}
+    .project-card-content a {color:var(--tac-accent);font-weight:600;text-decoration:none;}
+    .project-card-content a:hover {text-decoration:underline;}
+    /* Form */
+    label {display:block;margin-bottom:6px;font-weight:600;color:var(--tac-primary);}
+    input,textarea {
+      width:100%;padding:14px;margin-bottom:20px;
+      border:1px solid var(--tac-border);border-radius:8px;font-size:15px;
+    }
+    input:focus,textarea:focus {border-color:var(--tac-accent);outline:none;}
+    textarea {min-height:140px;}
+    button {
+      background:var(--tac-primary);color:#fff;padding:14px 22px;
+      border:none;border-radius:8px;font-size:16px;font-weight:600;
+      cursor:pointer;width:100%;
+    }
+    button:hover {background:var(--tac-accent);}
+    .honeypot {display:none;}
+  </style>
 </head>
 <body>
-  <h1>TechAid Consultants – Projects</h1>
-  <p>If you can read this, the Projects page is loading correctly.</p>
-</body>
-</html>
-<!-- ===========================
-     TECHAID CONSULTANTS HEADER
-     =========================== -->
-
-<style>
-  :root {
-    --tac-primary: #0A3D62;
-    --tac-accent: #3C6382;
-    --tac-light: #f5f7fa;
-    --tac-text: #2c3e50;
-    --tac-border: #dfe6e9;
-  }
-
-  body {
-    font-family: 'Inter', 'Segoe UI', sans-serif;
-    background: var(--tac-light);
-    color: var(--tac-text);
-    margin: 0;
-    padding: 0;
-  }
-
-  /* Header */
-  .tac-header {
-    background: #fff;
-    padding: 20px 40px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border-bottom: 1px solid var(--tac-border);
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-  }
-
-  .tac-logo {
-    font-size: 26px;
-    font-weight: 700;
-    color: var(--tac-primary);
-  }
-
-  .tac-nav a {
-    margin-left: 25px;
-    text-decoration: none;
-    color: var(--tac-primary);
-    font-weight: 600;
-    transition: 0.2s;
-  }
-
-  .tac-nav a:hover {
-    color: var(--tac-accent);
-  }
-
-  /* Page Container */
-  .tac-container {
-    max-width: 1000px;
-    margin: 40px auto;
-    background: #fff;
-    padding: 40px;
-    border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.06);
-  }
-
-  h2 {
-    color: var(--tac-primary);
-    margin-bottom: 10px;
-    font-size: 28px;
-    font-weight: 600;
-  }
-
-  p {
-    margin-bottom: 25px;
-    line-height: 1.6;
-  }
-
-  /* Project Cards */
-  .projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 25px;
-    margin-top: 30px;
-  }
-
-  .project-card {
-    background: #fff;
-    border: 1px solid var(--tac-border);
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-    transition: 0.2s;
-  }
-
-  .project-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-  }
-
-  .project-card img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-  }
-
-  .project-card-content {
-    padding: 20px;
-  }
-
-  .project-card-content h3 {
-    margin: 0 0 10px;
-    color: var(--tac-primary);
-  }
-
-  .project-card-content a {
-    color: var(--tac-accent);
-    font-weight: 600;
-    text-decoration: none;
-  }
-
-  .project-card-content a:hover {
-    text-decoration: underline;
-  }
-
-  /* Form Styling */
-  label {
-    display: block;
-    margin-bottom: 6px;
-    font-weight: 600;
-    color: var(--tac-primary);
-  }
-
-  input, textarea {
-    width: 100%;
-    padding: 14px;
-    margin-bottom: 20px;
-    border: 1px solid var(--tac-border);
-    border-radius: 8px;
-    font-size: 15px;
-    transition: 0.2s;
-  }
-
-  input:focus, textarea:focus {
-    border-color: var(--tac-accent);
-    outline: none;
-    box-shadow: 0 0 0 3px rgba(60, 99, 130, 0.15);
-  }
-
-  textarea {
-    min-height: 140px;
-  }
-
-  button {
-    background: var(--tac-primary);
-    color: #fff;
-    padding: 14px 22px;
-    border: none;
-    border-radius: 8px;
-    font-size: 16px;
-    cursor: pointer;
-    width: 100%;
-    font-weight: 600;
-  }
-
-  button:hover {
-    background: var(--tac-accent);
-  }
-
-  .honeypot {
-    display: none;
-  }
-</style>
 
 <header class="tac-header">
   <div class="tac-logo">TechAid Consultants</div>
@@ -188,16 +80,11 @@
   </nav>
 </header>
 
-<!-- ===========================
-     PROJECTS SECTION
-     =========================== -->
 <div class="tac-container">
   <h2>Our Projects</h2>
   <p>A selection of recent work delivered by TechAid Consultants across Australia.</p>
 
   <div class="projects-grid">
-
-    <!-- Project 1 -->
     <div class="project-card">
       <img src="https://images.unsplash.com/photo-1581091870627-3a0fa0e5f5c7" alt="Engineering Project">
       <div class="project-card-content">
@@ -206,8 +93,6 @@
         <a href="https://example.com/project1" target="_blank">View Project</a>
       </div>
     </div>
-
-    <!-- Project 2 -->
     <div class="project-card">
       <img src="https://images.unsplash.com/photo-1520607162513-777d3c0f0d4a" alt="Technical Advisory">
       <div class="project-card-content">
@@ -216,8 +101,6 @@
         <a href="https://example.com/project2" target="_blank">View Project</a>
       </div>
     </div>
-
-    <!-- Project 3 -->
     <div class="project-card">
       <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e" alt="Documentation Package">
       <div class="project-card-content">
@@ -226,8 +109,34 @@
         <a href="https://example.com/project3" target="_blank">View Project</a>
       </div>
     </div>
-
-    <!-- Project 4 -->
     <div class="project-card">
       <img src="https://images.unsplash.com/photo-1486401899868-0e6680f0f62c" alt="Project Management">
       <div class="project-card-content">
+        <h3>Project Management Support – WA</h3>
+        <p>Oversight and coordination of multi‑disciplinary engineering teams.</p>
+        <a href="https://example.com/project4" target="_blank">View Project</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="tac-container">
+  <h2>Book a Meeting (Google Meet)</h2>
+  <p>Please provide two optional meeting times. We will confirm the one that best fits our schedule and send a Google Meet link from <strong>techaidconsultants@gmail.com</strong>.</p>
+
+  <form action="https://formspree.io/f/mrpbayqo" method="POST">
+    <label>Full Name</label>
+    <input type="text" name="name" required>
+    <label>Role / Position</label>
+    <input type="text" name="role" required>
+    <label>Email</label>
+    <input type="email" name="email" required>
+    <label>Phone (optional)</label>
+    <input type="text" name="phone">
+    <label>Preferred Meeting Slot #1</label>
+    <input type="datetime-local" name="slot1" required>
+    <label>Preferred Meeting Slot #2</label>
+    <input type="datetime-local" name="slot2">
+    <label>Message / Project Details</label>
+    <textarea name="message" required></textarea>
+    <div class="honeypot"><input type="text" name="_gotcha">
