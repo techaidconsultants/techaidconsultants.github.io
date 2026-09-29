@@ -1,8 +1,9 @@
 :root {
-  --tac-primary: #0F3D2E;   /* Deep Green */
-  --tac-accent: #D4A65A;    /* Sand Gold */
-  --tac-light: #F7F7F2;     /* Off-White */
-  --tac-text: #2C3E50;      /* Dark Grey */
+  --tac-primary: #0A3D62;      /* Deep Professional Blue */
+  --tac-accent: #3C6382;       /* Soft Tech Blue */
+  --tac-light: #F5F7FA;        /* Clean Light Background */
+  --tac-text: #2C3E50;         /* Dark Slate */
+  --tac-border: #DFE6E9;       /* Light Grey */
 }
 
 body {
@@ -15,11 +16,11 @@ body {
 /* Header */
 .tac-header {
   background: #fff;
-  padding: 20px 40px;
+  padding: 15px 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 2px solid var(--tac-accent);
+  border-bottom: 2px solid var(--tac-primary);
   box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 
@@ -32,8 +33,8 @@ body {
 }
 
 .tac-logo img {
-  height: 40px;
-  margin-right: 10px;
+  height: 60px;
+  margin-right: 15px;
 }
 
 .tac-nav a {
@@ -41,10 +42,38 @@ body {
   text-decoration: none;
   color: var(--tac-primary);
   font-weight: 600;
+  transition: 0.2s;
 }
 
 .tac-nav a:hover {
   color: var(--tac-accent);
+}
+
+/* Logo Section for Home Page */
+.logo-section {
+  text-align: center;
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #0A3D62 0%, #3C6382 100%);
+  margin-top: 0;
+}
+
+.logo-section img {
+  height: 200px;
+  margin-bottom: 30px;
+}
+
+.logo-section h1 {
+  color: #fff;
+  font-size: 42px;
+  margin: 20px 0 10px 0;
+}
+
+.logo-section p {
+  color: #E8F0F7;
+  font-size: 18px;
+  margin: 0;
+  max-width: 700px;
+  margin: 0 auto;
 }
 
 /* Hero / Container */
@@ -64,17 +93,18 @@ h1, h2 {
 .btn {
   display: inline-block;
   padding: 12px 24px;
-  background: var(--tac-accent);
-  color: #000;
+  background: var(--tac-primary);
+  color: #fff;
   border-radius: 6px;
   text-decoration: none;
   font-weight: 600;
   margin-top: 20px;
+  transition: 0.2s;
 }
 
 .btn:hover {
-  background: var(--tac-primary);
-  color: #fff;
+  background: var(--tac-accent);
+  transform: translateY(-2px);
 }
 
 /* Projects Grid */
@@ -87,10 +117,16 @@ h1, h2 {
 
 .project-card {
   background: #fff;
-  border: 1px solid var(--tac-accent);
+  border: 2px solid var(--tac-accent);
   border-radius: 12px;
   padding: 20px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  transition: 0.2s;
+}
+
+.project-card:hover {
+  border-color: var(--tac-primary);
+  box-shadow: 0 6px 20px rgba(10, 61, 98, 0.1);
 }
 
 .project-card h3 {
@@ -124,7 +160,7 @@ footer a {
   content: "";
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(15, 61, 46, 0.6); /* TAC green overlay */
+  background: rgba(10, 61, 98, 0.6);
 }
 
 .hero-content {
@@ -137,6 +173,7 @@ footer a {
 .hero h1 {
   font-size: 48px;
   margin-bottom: 20px;
+  color: #fff;
 }
 
 .hero p {
