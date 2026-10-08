@@ -60,11 +60,19 @@
     .req { color: #C0392B; }
     .form-note { font-size: 12px; color: var(--tac-accent); margin: -8px 0 20px; }
     .hp { position: absolute; left: -9999px; }
+    .form-group { border: 1px solid var(--tac-border); border-radius: 8px; padding: 18px 18px 4px; margin: 0 0 22px; }
+    .form-group legend { padding: 0 8px; font-weight: 700; color: var(--tac-primary); font-size: 15px; }
+    .form-hint { font-size: 13px; color: var(--tac-accent); margin: 0 0 14px; }
+    .optional { font-weight: 400; font-size: 13px; color: var(--tac-accent); }
+    .check-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 18px; margin-bottom: 16px; }
+    label.check { display: flex; align-items: center; gap: 8px; font-weight: 400; color: var(--tac-text); margin: 0; cursor: pointer; }
+    label.check input { width: 16px; height: 16px; margin: 0; padding: 0; flex: 0 0 16px; accent-color: var(--tac-primary); }
+
     .contact-form-section button { width: 100%; padding: 14px; font-weight: 600; }
 
     @media (max-width: 768px) {
       .contact-layout { grid-template-columns: 1fr; }
-      .form-row { grid-template-columns: 1fr; }
+      .form-row, .check-grid { grid-template-columns: 1fr; }
       .contact-form-section { padding: 22px; }
     }
   </style>
@@ -83,7 +91,7 @@
 
 <div class="page-header">
   <h1>Contact Us</h1>
-  <p>Talk to us about cost reconciliation, cost planning, project controls or risk support for your project</p>
+  <p>Talk to us about project management, cost or commercial support for your project</p>
 </div>
 
 <div class="tac-container">
@@ -91,7 +99,7 @@
   <div class="contact-highlights">
     <div class="highlight">
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0A3D62" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
-      <div><h3>Prompt response</h3><p>We reply to enquiries within one business day.</p></div>
+      <div><h3>Timely response</h3><p>We reply to all enquiries within two business days.</p></div>
     </div>
     <div class="highlight">
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0A3D62" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="13" height="12" rx="2"/><path d="M16 10l5-3v10l-5-3"/></svg>
@@ -99,7 +107,7 @@
     </div>
     <div class="highlight">
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0A3D62" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14.5 0 18M12 3c-3 3.5-3 14.5 0 18"/></svg>
-      <div><h3>Australia and overseas</h3><p>Supporting major infrastructure projects in NSW, Queensland and Victoria.</p></div>
+      <div><h3>Pakistan, UAE and Australia</h3><p>Supporting infrastructure and construction projects across all three markets.</p></div>
     </div>
   </div>
 
@@ -114,10 +122,6 @@
       <h3 class="section-label">Our offices</h3>
       <div class="office">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0A3D62" stroke-width="2"><path d="M12 21s-7-6.3-7-12a7 7 0 0 1 14 0c0 5.7-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>
-        <div><strong>Australia</strong><span>Queensland</span></div>
-      </div>
-      <div class="office">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0A3D62" stroke-width="2"><path d="M12 21s-7-6.3-7-12a7 7 0 0 1 14 0c0 5.7-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>
         <div><strong>Pakistan</strong><span>EME DHA, Lahore</span></div>
       </div>
       <div class="office">
@@ -127,7 +131,7 @@
 
       <h3 class="section-label">What happens next</h3>
       <ol class="steps">
-        <li>We review your enquiry and reply within one business day.</li>
+        <li>We review your enquiry and reply within two business days.</li>
         <li>If helpful, we arrange a short call or Google Meet at a time that suits you.</li>
         <li>We follow up with a scope and fee proposal if needed.</li>
       </ol>
@@ -169,4 +173,106 @@
             <input type="tel" id="phone" name="phone" autocomplete="tel">
           </div>
           <div>
-            <label
+            <label for="availability">Preferred contact method</label>
+            <input type="text" id="availability" name="availability" placeholder="e.g. Email first">
+          </div>
+        </div>
+
+        <fieldset class="form-group">
+          <legend>Services required</legend>
+          <p class="form-hint">Select all that apply.</p>
+          <div class="check-grid">
+            <label class="check"><input type="checkbox" name="services[]" value="Project Management"> Project Management</label>
+            <label class="check"><input type="checkbox" name="services[]" value="Project Cost Reconciliation"> Project Cost Reconciliation</label>
+            <label class="check"><input type="checkbox" name="services[]" value="Design Growth / Cost Planning"> Design Growth / Cost Planning</label>
+            <label class="check"><input type="checkbox" name="services[]" value="Quantity Surveying &amp; Estimation"> Quantity Surveying &amp; Estimation</label>
+            <label class="check"><input type="checkbox" name="services[]" value="Planning &amp; Scheduling (P6)"> Planning &amp; Scheduling (P6)</label>
+            <label class="check"><input type="checkbox" name="services[]" value="Contract &amp; Sub-contract Management"> Contract &amp; Sub-contract Management</label>
+            <label class="check"><input type="checkbox" name="services[]" value="Risk &amp; Value Management"> Risk &amp; Value Management</label>
+            <label class="check"><input type="checkbox" name="services[]" value="Other"> Other / not sure yet</label>
+          </div>
+        </fieldset>
+
+        <fieldset class="form-group">
+          <legend>Project details <span class="optional">(optional)</span></legend>
+          <p class="form-hint">Any details help us understand the scope and respond with the right people.</p>
+
+          <div class="form-row">
+            <div>
+              <label for="project">Project name</label>
+              <input type="text" id="project" name="project" placeholder="e.g. Motorway Upgrade">
+            </div>
+            <div>
+              <label for="location">Location / country</label>
+              <input type="text" id="location" name="location" placeholder="e.g. Sydney, Dubai, Lahore">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div>
+              <label for="contract">Contract type</label>
+              <select id="contract" name="contract_type">
+                <option value="">Select</option>
+                <option>Alliance / collaborative</option>
+                <option>Design and construct (D&amp;C)</option>
+                <option>Early contractor involvement (ECI)</option>
+                <option>Construct only</option>
+                <option>PPP</option>
+                <option>Other / not sure</option>
+              </select>
+            </div>
+            <div>
+              <label for="stage">Current project stage</label>
+              <select id="stage" name="project_stage">
+                <option value="">Select</option>
+                <option>Tender / bid</option>
+                <option>Design development</option>
+                <option>Construction / delivery</option>
+                <option>Completion / close-out</option>
+                <option>Other</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div>
+              <label for="value">Project value (AUD or equivalent)</label>
+              <select id="value" name="project_value">
+                <option value="">Select</option>
+                <option>Under $50M</option>
+                <option>$50M – $250M</option>
+                <option>$250M – $1B</option>
+                <option>Over $1B</option>
+                <option>Prefer not to say</option>
+              </select>
+            </div>
+            <div>
+              <label for="start">Start and duration of support</label>
+              <input type="text" id="start" name="support_timing" placeholder="e.g. March, 12 months">
+            </div>
+          </div>
+
+          <label for="docs">Link to drawings or documents</label>
+          <input type="url" id="docs" name="documents_link" placeholder="e.g. SharePoint, Google Drive or Dropbox link">
+        </fieldset>
+
+        <label for="message">Scope and additional information <span class="req">*</span></label>
+        <textarea id="message" name="message" required placeholder="Briefly describe the work you need help with – e.g. number of design packages, deliverables, reporting requirements or key dates"></textarea>
+        <p class="form-note">Your details are used only to respond to this enquiry.</p>
+
+        <button type="submit">Send Enquiry</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div>
+    <p><strong>Tech Aid Consultants</strong></p>
+    <p>For all inquiries, please use our <a href="contact.html">Contact Form</a>.</p>
+    <p>© 2026 Tech Aid Consultants. All rights reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>
