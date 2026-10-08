@@ -1,6 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tech Aid Consultants – Project Management, Cost &amp; Commercial Services</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <style>
+    /* Home page hero stats */
+    .hero-stats {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; margin: 24px 0 18px;
+      background: rgba(255,255,255,0.2); border-radius: 8px; overflow: hidden;
+    }
+    .hero-stats div { background: rgba(10,61,98,0.55); padding: 14px 10px; text-align: center; }
+    .hero-stats strong { display: block; font-size: 26px; color: #fff; line-height: 1.1; }
+    .hero-stats span { font-size: 12px; color: #C9D6E2; text-transform: uppercase; letter-spacing: 0.5px; }
+    .hero-main p.hero-clients { font-size: 14px; color: #C9D6E2; }
+    @media (max-width: 480px) { .hero-stats { grid-template-columns: repeat(2, 1fr); } }
     /* Featured projects on the home page */
     .project-thumb {
       display: block; width: calc(100% + 40px); height: 180px; object-fit: cover;
@@ -12,14 +30,6 @@
     }
     .service-item .project-client { margin-top: 8px; }
   </style>
-  <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Our Services – Tech Aid Consultants</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="icon" href="favicon.ico" sizes="any">
-  <link rel="icon" type="image/png" href="favicon.png">
-  <link rel="apple-touch-icon" href="apple-touch-icon.png">
 </head>
 <body>
 
@@ -39,19 +49,19 @@
       <img src="images/logo.jpg.png" alt="Tech Aid Consultants Logo" class="hero-logo">
       <div class="hero-text">
         <h1>Tech Aid Consultants</h1>
-        <p class="hero-tagline">Specialized civil consultancy delivering project management and cost planning services to Australia's infrastructure industry for over 20 years.</p>
+        <p class="hero-tagline">Project management, cost and commercial services for infrastructure and construction projects in Pakistan, the UAE and Australia.</p>
       </div>
     </div>
     <div class="hero-main">
-      <p>With offices in Pakistan, UAE, and Australia, TAC has partnered with leading construction and engineering firms on major infrastructure projects across NSW, Queensland, and Victoria.</p>
-      <p><strong>TAC specializes in:</strong></p>
-      <ul class="hero-list">
-        <li>Project Cost Reconciliation for Alliance Contracts</li>
-        <li>Design Growth/Cost Planning Services</li>
-        <li>Quantity Surveying and Estimation</li>
-        <li>Project Management and Scheduling</li>
-        <li>Contract and Sub-contract Management</li>
-      </ul>
+      <p>TAC is a team of professional engineers, cost estimators, planners and project managers. For over 20 years we have supported leading contractors and joint ventures, including on major motorway, rail and tunnelling projects across New South Wales, Queensland and Victoria.</p>
+      <p>From tender through design and delivery, we help project teams plan, control and report on scope, time and cost.</p>
+      <div class="hero-stats">
+        <div><strong>20+</strong><span>Years</span></div>
+        <div><strong>10</strong><span>Major projects</span></div>
+        <div><strong>3</strong><span>Markets</span></div>
+        <div><strong>2</strong><span>Offices</span></div>
+      </div>
+      <p class="hero-clients">Clients include CPB Contractors, John Holland, Thiess, Ghella, Acciona and Seymour Whyte.</p>
       <div class="hero-buttons">
         <a href="services.html" class="btn">Explore Our Services</a>
         <a href="projects.html" class="btn">View Our Projects</a>
@@ -98,7 +108,7 @@
       <p>Scope management, procurement, financial management, and project control for infrastructure projects.</p>
     </div>
     <div class="service-item">
-      <h3>Scheduling & Control</h3>
+      <h3>Scheduling &amp; Control</h3>
       <p>Project planning and scheduling using Primavera P6 with comprehensive project control systems.</p>
     </div>
     <div class="service-item">
@@ -139,7 +149,7 @@
     <a href="projects.html" class="btn">View All Projects</a>
   </div>
 </section>
-  
+
 <footer>
   <div>
     <p><strong>Tech Aid Consultants</strong></p>
