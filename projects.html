@@ -3,11 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Our Services – Tech Aid Consultants</title>
+  <title>Our Projects – Tech Aid Consultants</title>
   <link rel="stylesheet" href="style.css">
   <link rel="icon" href="favicon.ico" sizes="any">
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <style>
+    /* Rotating project photos behind the Projects page header */
+    .page-header { position: relative; overflow: hidden; }
+    .page-header .header-content { position: relative; z-index: 2; }
+    .page-header h1 { color: #fff; }
+    .header-slides { position: absolute; inset: 0; z-index: 0; }
+    .header-slides div {
+      position: absolute; inset: 0;
+      background-size: cover; background-position: center;
+      opacity: 0; transition: opacity 1.5s ease-in-out;
+    }
+    .header-slides div.active { opacity: 1; }
+    .header-overlay {
+      position: absolute; inset: 0; z-index: 1;
+      background: linear-gradient(135deg, rgba(10,61,98,0.80) 0%, rgba(60,99,130,0.70) 100%);
+    }
+  </style>
 </head>
 <body>
 
@@ -22,8 +39,21 @@
 </header>
 
 <div class="page-header">
-  <h1>Our Projects</h1>
-  <p>Major infrastructure projects delivered across Australia</p>
+  <div class="header-slides">
+    <div style="background-image: url('images/Sydney%20Metro%20TSE%20Works%20Pic1.jpeg');"></div>
+    <div style="background-image: url('images/airport-link-brisbane%20pic%202.jpg');"></div>
+    <div style="background-image: url('images/Rozella%20Interchange%20pic%201.png');"></div>
+    <div style="background-image: url('images/SRL-station-at-Clayton%20Pic%201.jpg');"></div>
+    <div style="background-image: url('images/Sydney%20Metro%20TSE%20Works%20Pic4.jpeg');"></div>
+    <div style="background-image: url('images/airport-link-brisbane%20pic%203.jpg');"></div>
+    <div style="background-image: url('images/Sydney%20Metro%20Westren%20Syd%20ic%201.jpeg');"></div>
+    <div style="background-image: url('images/srl%20pic2.avif');"></div>
+  </div>
+  <div class="header-overlay"></div>
+  <div class="header-content">
+    <h1>Our Projects</h1>
+    <p>Major infrastructure projects delivered across Australia</p>
+  </div>
 </div>
 
 <div class="tac-container">
@@ -110,6 +140,22 @@
     <p>© 2026 Tech Aid Consultants. All rights reserved.</p>
   </div>
 </footer>
+
+<script>
+  // Fade between project photos every 5 seconds
+  (function () {
+    var slides = document.querySelectorAll('.header-slides div');
+    if (!slides.length) return;
+    var i = 0;
+    slides[0].classList.add('active');
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    setInterval(function () {
+      slides[i].classList.remove('active');
+      i = (i + 1) % slides.length;
+      slides[i].classList.add('active');
+    }, 5000);
+  })();
+</script>
 
 </body>
 </html>
