@@ -9,20 +9,51 @@
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <style>
-    /* Rotating project photos behind the Projects page header */
-    .page-header { position: relative; overflow: hidden; }
-    .page-header .header-content { position: relative; z-index: 2; }
+    /* Project photo galleries under each state section */
     .page-header h1 { color: #fff; }
-    .header-slides { position: absolute; inset: 0; z-index: 0; }
-    .header-slides div {
-      position: absolute; inset: 0;
-      background-size: cover; background-position: center;
-      opacity: 0; transition: opacity 1.5s ease-in-out;
+    .project-gallery {
+      position: relative; height: 400px; margin: 10px 0 30px;
+      border-radius: 8px; overflow: hidden; background: #0A3D62;
     }
-    .header-slides div.active { opacity: 1; }
-    .header-overlay {
-      position: absolute; inset: 0; z-index: 1;
-      background: linear-gradient(135deg, rgba(10,61,98,0.80) 0%, rgba(60,99,130,0.70) 100%);
+    .project-gallery figure {
+      position: absolute; inset: 0; margin: 0;
+      opacity: 0; transition: opacity 1.2s ease-in-out;
+    }
+    .project-gallery figure.active { opacity: 1; }
+    .project-gallery img {
+      width: 100%; height: 100%; object-fit: cover; display: block;
+      transform: scale(1); transition: transform 7s ease-out;
+    }
+    .project-gallery figure.active img { transform: scale(1.06); }
+    .project-gallery figcaption {
+      position: absolute; left: 0; right: 0; bottom: 0;
+      padding: 40px 24px 18px; color: #fff; font-size: 16px; font-weight: 600;
+      background: linear-gradient(to top, rgba(10,61,98,0.9), rgba(10,61,98,0));
+    }
+    .gallery-btn {
+      position: absolute; top: 50%; transform: translateY(-50%); z-index: 2;
+      width: 42px; height: 42px; min-width: 0; padding: 0; margin: 0;
+      display: flex; align-items: center; justify-content: center;
+      border: none; border-radius: 50%; cursor: pointer;
+      background: rgba(255,255,255,0.85); color: #0A3D62; font-size: 26px; line-height: 1;
+    }
+    .gallery-btn:hover { background: #fff; transform: translateY(-50%); }
+    .gallery-btn.prev { left: 14px; }
+    .gallery-btn.next { right: 14px; }
+    .gallery-dots { position: absolute; right: 20px; bottom: 20px; z-index: 2; display: flex; gap: 8px; }
+    .gallery-dots button {
+      width: 10px; height: 10px; min-width: 0; padding: 0; margin: 0; border: none; border-radius: 50%;
+      background: rgba(255,255,255,0.5); cursor: pointer;
+    }
+    .gallery-dots button:hover { background: rgba(255,255,255,0.8); transform: none; }
+    .gallery-dots button.active { background: #fff; }
+    @media (max-width: 768px) {
+      .project-gallery { height: 240px; }
+      .project-gallery figcaption { font-size: 14px; padding: 30px 16px 14px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .project-gallery figure, .project-gallery img { transition: none; }
+      .project-gallery figure.active img { transform: none; }
     }
   </style>
 </head>
@@ -39,27 +70,32 @@
 </header>
 
 <div class="page-header">
-  <div class="header-slides">
-    <div style="background-image: url('images/Sydney%20Metro%20TSE%20Works%20Pic1.jpeg');"></div>
-    <div style="background-image: url('images/airport-link-brisbane%20pic%202.jpg');"></div>
-    <div style="background-image: url('images/Rozella%20Interchange%20pic%201.png');"></div>
-    <div style="background-image: url('images/SRL-station-at-Clayton%20Pic%201.jpg');"></div>
-    <div style="background-image: url('images/Sydney%20Metro%20TSE%20Works%20Pic4.jpeg');"></div>
-    <div style="background-image: url('images/airport-link-brisbane%20pic%203.jpg');"></div>
-    <div style="background-image: url('images/Sydney%20Metro%20Westren%20Syd%20ic%201.jpeg');"></div>
-    <div style="background-image: url('images/srl%20pic2.avif');"></div>
-  </div>
-  <div class="header-overlay"></div>
-  <div class="header-content">
-    <h1>Our Projects</h1>
-    <p>Major infrastructure projects delivered across Australia</p>
-  </div>
+  <h1>Our Projects</h1>
+  <p>Major infrastructure projects delivered across Australia</p>
 </div>
 
 <div class="tac-container">
   <p>TAC has successfully delivered Design Growth/Cost Planning services on major infrastructure projects across Australia. Our experience spans the full spectrum of civil infrastructure including motorways, rail transit, and aviation projects.</p>
 
   <h2 class="projects-region">New South Wales Projects</h2>
+  <div class="project-gallery">
+    <figure>
+      <img src="images/Sydney Metro TSE Works Pic1.jpeg" alt="Sydney Metro City &amp; Southwest – TSE Works" loading="lazy">
+      <figcaption>Sydney Metro City &amp; Southwest – TSE Works</figcaption>
+    </figure>
+    <figure>
+      <img src="images/Rozella Interchange pic 1.png" alt="WestConnex Rozelle Interchange" loading="lazy">
+      <figcaption>WestConnex Rozelle Interchange</figcaption>
+    </figure>
+    <figure>
+      <img src="images/Sydney Metro TSE Works Pic4.jpeg" alt="Sydney Metro City &amp; Southwest – TSE Works" loading="lazy">
+      <figcaption>Sydney Metro City &amp; Southwest – TSE Works</figcaption>
+    </figure>
+    <figure>
+      <img src="images/Sydney Metro Westren Syd ic 1.jpeg" alt="Western Sydney Airport – SBT Works" loading="lazy">
+      <figcaption>Western Sydney Airport – SBT Works</figcaption>
+    </figure>
+  </div>
   <div class="projects-grid">
     <div class="project-card">
       <h3>Sydney Metro City & Southwest</h3>
@@ -95,6 +131,16 @@
   </div>
 
   <h2 class="projects-region">Queensland Projects</h2>
+  <div class="project-gallery">
+    <figure>
+      <img src="images/airport-link-brisbane pic 2.jpg" alt="Airport Link, Brisbane" loading="lazy">
+      <figcaption>Airport Link, Brisbane</figcaption>
+    </figure>
+    <figure>
+      <img src="images/airport-link-brisbane pic 3.jpg" alt="Airport Link, Brisbane" loading="lazy">
+      <figcaption>Airport Link, Brisbane</figcaption>
+    </figure>
+  </div>
   <div class="projects-grid">
     <div class="project-card">
       <h3>Brisbane Airport Link</h3>
@@ -117,6 +163,16 @@
   </div>
 
   <h2 class="projects-region">Victoria Projects</h2>
+  <div class="project-gallery">
+    <figure>
+      <img src="images/SRL-station-at-Clayton Pic 1.jpg" alt="Suburban Rail Loop – Clayton Station" loading="lazy">
+      <figcaption>Suburban Rail Loop – Clayton Station</figcaption>
+    </figure>
+    <figure>
+      <img src="images/srl pic2.avif" alt="Suburban Rail Loop" loading="lazy">
+      <figcaption>Suburban Rail Loop</figcaption>
+    </figure>
+  </div>
   <div class="projects-grid">
     <div class="project-card">
       <h3>Suburban Rail Loop - Western Package C</h3>
@@ -142,19 +198,51 @@
 </footer>
 
 <script>
-  // Fade between project photos every 5 seconds
-  (function () {
-    var slides = document.querySelectorAll('.header-slides div');
+  // Rotating photo galleries: add more photos by copying a <figure> block
+  document.querySelectorAll('.project-gallery').forEach(function (gallery) {
+    var slides = gallery.querySelectorAll('figure');
     if (!slides.length) return;
-    var i = 0;
-    slides[0].classList.add('active');
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-    setInterval(function () {
+    var i = 0, timer = null;
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var dots = [];
+
+    function show(n) {
       slides[i].classList.remove('active');
-      i = (i + 1) % slides.length;
+      if (dots[i]) dots[i].classList.remove('active');
+      i = (n + slides.length) % slides.length;
       slides[i].classList.add('active');
-    }, 5000);
-  })();
+      if (dots[i]) dots[i].classList.add('active');
+    }
+
+    if (slides.length > 1) {
+      var prev = document.createElement('button');
+      prev.className = 'gallery-btn prev'; prev.innerHTML = '&#8249;'; prev.setAttribute('aria-label', 'Previous photo');
+      var next = document.createElement('button');
+      next.className = 'gallery-btn next'; next.innerHTML = '&#8250;'; next.setAttribute('aria-label', 'Next photo');
+      var dotWrap = document.createElement('div');
+      dotWrap.className = 'gallery-dots';
+      slides.forEach(function (_, n) {
+        var d = document.createElement('button');
+        d.setAttribute('aria-label', 'Photo ' + (n + 1));
+        d.addEventListener('click', function () { show(n); restart(); });
+        dotWrap.appendChild(d); dots.push(d);
+      });
+      prev.addEventListener('click', function () { show(i - 1); restart(); });
+      next.addEventListener('click', function () { show(i + 1); restart(); });
+      gallery.appendChild(prev); gallery.appendChild(next); gallery.appendChild(dotWrap);
+      gallery.addEventListener('mouseenter', function () { clearInterval(timer); });
+      gallery.addEventListener('mouseleave', restart);
+    }
+
+    function restart() {
+      clearInterval(timer);
+      if (!reduce && slides.length > 1) timer = setInterval(function () { show(i + 1); }, 5000);
+    }
+
+    slides[0].classList.add('active');
+    if (dots[0]) dots[0].classList.add('active');
+    restart();
+  });
 </script>
 
 </body>
