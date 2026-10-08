@@ -3,11 +3,71 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Our Services – Tech Aid Consultants</title>
+  <title>Contact Us – Tech Aid Consultants</title>
   <link rel="stylesheet" href="style.css">
   <link rel="icon" href="favicon.ico" sizes="any">
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <style>
+    /* Contact page */
+    .page-header h1 { color: #fff; }
+    .contact-highlights {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px; margin: 0 0 40px;
+    }
+    .highlight {
+      display: flex; gap: 14px; align-items: flex-start;
+      background: #fff; border: 1px solid var(--tac-border); border-top: 3px solid var(--tac-primary);
+      border-radius: 8px; padding: 18px;
+    }
+    .highlight svg { flex: 0 0 28px; }
+    .highlight h3 { margin: 0 0 4px; font-size: 16px; }
+    .highlight p { margin: 0; font-size: 14px; }
+
+    .contact-layout { grid-template-columns: 1fr 1.4fr; align-items: start; }
+    .contact-info h2, .contact-form-section h2 { margin-top: 0; }
+    .contact-info h3.section-label {
+      margin: 26px 0 12px; font-size: 13px; text-transform: uppercase; letter-spacing: 0.6px; color: var(--tac-accent);
+    }
+    .contact-person p { margin: 6px 0; font-size: 14px; }
+    .office {
+      display: flex; gap: 12px; align-items: flex-start;
+      padding: 12px 0; border-bottom: 1px solid var(--tac-border);
+    }
+    .office:last-child { border-bottom: none; }
+    .office svg { flex: 0 0 20px; margin-top: 2px; }
+    .office strong { display: block; color: var(--tac-primary); font-size: 15px; }
+    .office span { font-size: 14px; }
+    .steps { list-style: none; padding: 0; margin: 0; counter-reset: step; }
+    .steps li { position: relative; padding: 0 0 14px 40px; font-size: 14px; counter-increment: step; }
+    .steps li::before {
+      content: counter(step); position: absolute; left: 0; top: -2px;
+      width: 26px; height: 26px; border-radius: 50%; background: var(--tac-primary); color: #fff;
+      font-size: 13px; font-weight: 700; display: flex; align-items: center; justify-content: center;
+    }
+
+    .contact-form-section {
+      background: #fff; border: 1px solid var(--tac-border); border-radius: 8px;
+      padding: 30px; box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+    .contact-form-section > p { font-size: 14px; margin-bottom: 24px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0 18px; }
+    select {
+      width: 100%; padding: 12px; margin-bottom: 20px; border: 1px solid var(--tac-border);
+      border-radius: 6px; font-size: 14px; font-family: inherit; background: #fff; color: var(--tac-text);
+    }
+    select:focus { border-color: var(--tac-accent); outline: none; box-shadow: 0 0 0 3px rgba(60,99,130,0.15); }
+    .req { color: #C0392B; }
+    .form-note { font-size: 12px; color: var(--tac-accent); margin: -8px 0 20px; }
+    .hp { position: absolute; left: -9999px; }
+    .contact-form-section button { width: 100%; padding: 14px; font-weight: 600; }
+
+    @media (max-width: 768px) {
+      .contact-layout { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .contact-form-section { padding: 22px; }
+    }
+  </style>
 </head>
 <body>
 
@@ -23,70 +83,90 @@
 
 <div class="page-header">
   <h1>Contact Us</h1>
-  <p>Get in touch with Tech Aid Consultants</p>
+  <p>Talk to us about cost reconciliation, cost planning, project controls or risk support for your project</p>
 </div>
 
 <div class="tac-container">
+
+  <div class="contact-highlights">
+    <div class="highlight">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0A3D62" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+      <div><h3>Prompt response</h3><p>We reply to enquiries within one business day.</p></div>
+    </div>
+    <div class="highlight">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0A3D62" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="13" height="12" rx="2"/><path d="M16 10l5-3v10l-5-3"/></svg>
+      <div><h3>Online meetings</h3><p>Meetings run on Google Meet, scheduled around your time zone.</p></div>
+    </div>
+    <div class="highlight">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0A3D62" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14.5 0 18M12 3c-3 3.5-3 14.5 0 18"/></svg>
+      <div><h3>Australia and overseas</h3><p>Supporting major infrastructure projects in NSW, Queensland and Victoria.</p></div>
+    </div>
+  </div>
+
   <div class="contact-layout">
     <div class="contact-info">
-      <h2>Office Locations</h2>
-      
-      <div class="contact-office">
-        <h3>Pakistan Office</h3>
-        <p><strong>Contact Person:</strong> Abdul Waheed</p>
-        <p><strong>Designation:</strong> Coordination Manager</p>
-        <p><strong>Email:</strong> <a href="mailto:techaidconsultants@gmail.com">techaidconsultants@gmail.com</a></p>
-        <p><strong>Address:</strong><br>EME DHA, <br>Lahore, Pakistan</p>
+      <h2>Get in Touch</h2>
+      <div class="contact-person">
+        <p><strong>Abdul Waheed</strong>, Coordination Manager</p>
+        <p><a href="mailto:techaidconsultants@gmail.com">techaidconsultants@gmail.com</a></p>
       </div>
 
-      <div class="contact-office">
-        <h3>UAE Office</h3>
-        <p><strong>Contact Person:</strong> Abdul Waheed</p>
-        <p><strong>Designation:</strong> Coordination Manager</p>
-        <p><strong>Email:</strong> <a href="mailto:techaidconsultants@gmail.com">techaidconsultants@gmail.com</a></p>
-        <p><strong>Address:</strong><br>Sharjah, United Arab Emirates</p>
+      <h3 class="section-label">Our offices</h3>
+      <div class="office">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0A3D62" stroke-width="2"><path d="M12 21s-7-6.3-7-12a7 7 0 0 1 14 0c0 5.7-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>
+        <div><strong>Australia</strong><span>Queensland</span></div>
       </div>
+      <div class="office">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0A3D62" stroke-width="2"><path d="M12 21s-7-6.3-7-12a7 7 0 0 1 14 0c0 5.7-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>
+        <div><strong>Pakistan</strong><span>EME DHA, Lahore</span></div>
+      </div>
+      <div class="office">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0A3D62" stroke-width="2"><path d="M12 21s-7-6.3-7-12a7 7 0 0 1 14 0c0 5.7-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>
+        <div><strong>United Arab Emirates</strong><span>Sharjah</span></div>
+      </div>
+
+      <h3 class="section-label">What happens next</h3>
+      <ol class="steps">
+        <li>We review your enquiry and reply within one business day.</li>
+        <li>If helpful, we arrange a short call or Google Meet at a time that suits you.</li>
+        <li>We follow up with a scope and fee proposal if needed.</li>
+      </ol>
     </div>
 
     <div class="contact-form-section">
-      <h2>Book a Meeting</h2>
-      <p>Please provide two optional meeting times. We will confirm the one that best fits our schedule and send a Google Meet link from <strong>techaidconsultants@gmail.com</strong>.</p>
+      <h2>Send an Enquiry</h2>
+      <p>Tell us about your project and we'll get back to you to discuss your requirements. If a meeting suits, we'll send a Google Meet invitation at a time that works for you.</p>
 
       <form action="https://formspree.io/f/mrpbayqo" method="POST">
-        <label for="name">Full Name</label>
-        <input type="text" id="name" name="name" required>
+        <input type="hidden" name="_subject" value="New enquiry – techaidconsultant.com">
+        <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off">
 
-        <label for="role">Role / Position</label>
-        <input type="text" id="role" name="role" placeholder="e.g., Director, Project Manager" required>
+        <div class="form-row">
+          <div>
+            <label for="name">Full name <span class="req">*</span></label>
+            <input type="text" id="name" name="name" autocomplete="name" required>
+          </div>
+          <div>
+            <label for="role">Role / position <span class="req">*</span></label>
+            <input type="text" id="role" name="role" placeholder="e.g. Commercial Manager" required>
+          </div>
+        </div>
 
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" required>
+        <div class="form-row">
+          <div>
+            <label for="company">Company / organisation <span class="req">*</span></label>
+            <input type="text" id="company" name="company" autocomplete="organization" required>
+          </div>
+          <div>
+            <label for="email">Email <span class="req">*</span></label>
+            <input type="email" id="email" name="email" autocomplete="email" required>
+          </div>
+        </div>
 
-        <label for="phone">Phone (optional)</label>
-        <input type="text" id="phone" name="phone">
-
-        <label for="slot1">Preferred Meeting Slot #1</label>
-        <input type="datetime-local" id="slot1" name="slot1" required>
-
-        <label for="slot2">Preferred Meeting Slot #2</label>
-        <input type="datetime-local" id="slot2" name="slot2">
-
-        <label for="message">Message (optional)</label>
-        <textarea id="message" name="message" placeholder="Tell us about your project or inquiry..."></textarea>
-
-        <button type="submit">Send Meeting Request</button>
-      </form>
-    </div>
-  </div>
-</div>
-
-<footer>
-  <div>
-    <p><strong>Tech Aid Consultants</strong></p>
-    <p>For all inquiries, please use our <a href="contact.html">Contact Form</a>.</p>
-    <p>© 2026 Tech Aid Consultants. All rights reserved.</p>
-  </div>
-</footer>
-
-</body>
-</html>
+        <div class="form-row">
+          <div>
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone" autocomplete="tel">
+          </div>
+          <div>
+            <label
