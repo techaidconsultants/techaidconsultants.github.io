@@ -8,6 +8,31 @@
   <link rel="icon" href="favicon.ico" sizes="any">
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <style>
+    /* Service illustrations */
+    .page-header h1 { color: #fff; }
+    .service-visuals {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px; margin: 20px 0 10px;
+    }
+    .service-visuals figure { margin: 0; }
+    .service-visuals img {
+      width: 100%; height: auto; display: block; cursor: zoom-in;
+      border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.10);
+      transition: box-shadow 0.2s;
+    }
+    .service-visuals img:hover { box-shadow: 0 4px 18px rgba(10,61,98,0.25); }
+    .service-visuals figcaption { font-size: 13px; color: var(--tac-accent); margin-top: 8px; text-align: center; }
+    /* Full-size viewer */
+    .lightbox {
+      display: none; position: fixed; inset: 0; z-index: 9999;
+      background: rgba(10,61,98,0.92); padding: 30px; cursor: zoom-out;
+      align-items: center; justify-content: center;
+    }
+    .lightbox.open { display: flex; }
+    .lightbox img { max-width: 100%; max-height: 100%; border-radius: 8px; box-shadow: 0 10px 40px rgba(0,0,0,0.4); }
+    .lightbox span { position: absolute; top: 14px; right: 24px; color: #fff; font-size: 32px; line-height: 1; }
+  </style>
 </head>
 <body>
 
@@ -31,6 +56,9 @@
 
   <h2 class="projects-region">Project Cost Reconciliation</h2>
   <p>For alliance and collaborative contracts. Cost verifiers confirm that actual costs are valid project costs. TAC complements this by tracking how costs move against the tender scope and assumptions, and separating that movement by source for the alliance team to consider, including in pain/gain share discussions.</p>
+  <div class="service-visuals">
+    <figure><img src="images/cost-reconciliation-waterfall.svg" alt="Cost reconciliation waterfall from tender baseline to current forecast" loading="lazy"><figcaption>Cost reconciliation report – movement by source, with tender assumptions vs delivery data</figcaption></figure>
+  </div>
   <div class="projects-grid">
     <div class="project-card">
       <h3>Tender Baseline</h3>
@@ -52,6 +80,9 @@
 
   <h2 class="projects-region">Cost Planning &amp; Quantity Surveying</h2>
   <p>Tracking design growth from the tender through each design stage, so cost movement is visible as the design develops.</p>
+  <div class="service-visuals">
+    <figure><img src="images/cost-planning-design-stages.svg" alt="Design growth tracker showing package cost by design stage" loading="lazy"><figcaption>Design growth tracker – package cost through each design stage, with quantity drivers</figcaption></figure>
+  </div>
   <div class="projects-grid">
     <div class="project-card">
       <h3>Design Growth/Cost Planning Services</h3>
@@ -65,6 +96,10 @@
 
   <h2 class="projects-region">Project Management &amp; Controls</h2>
   <p>Support for planning, controlling and reporting on project delivery, from scope and procurement through to schedule management.</p>
+  <div class="service-visuals">
+    <figure><img src="images/schedule-gantt.svg" alt="Critical path schedule" loading="lazy"><figcaption>Critical path schedule – progress against baseline</figcaption></figure>
+    <figure><img src="images/project-dashboard.svg" alt="Project controls dashboard with S-curve and package progress" loading="lazy"><figcaption>Project controls dashboard – earned value, performance indices and contingency</figcaption></figure>
+  </div>
   <div class="projects-grid">
     <div class="project-card">
       <h3>Project Management</h3>
@@ -82,6 +117,10 @@
 
   <h2 class="projects-region">Commercial &amp; Risk Advisory</h2>
   <p>Commercial support across head contracts, subcontract packages, variations and project risk.</p>
+  <div class="service-visuals">
+    <figure><img src="images/risk-register.svg" alt="Risk register with heat map" loading="lazy"><figcaption>Risk register – inherent and residual ratings with treatments</figcaption></figure>
+    <figure><img src="images/risk-spider-chart.svg" alt="Risk profile spider chart" loading="lazy"><figcaption>Quantitative risk analysis – Monte Carlo outturn and key risk drivers</figcaption></figure>
+  </div>
   <div class="projects-grid">
     <div class="project-card">
       <h3>Contract &amp; Sub-contract Management</h3>
@@ -107,6 +146,19 @@
     <p>© 2026 Tech Aid Consultants. All rights reserved.</p>
   </div>
 </footer>
+
+<div class="lightbox" id="lightbox"><span>&times;</span><img src="" alt=""></div>
+<script>
+  // Click an illustration to view it full size
+  (function () {
+    var box = document.getElementById('lightbox'), big = box.querySelector('img');
+    document.querySelectorAll('.service-visuals img').forEach(function (img) {
+      img.addEventListener('click', function () { big.src = img.src; big.alt = img.alt; box.classList.add('open'); });
+    });
+    box.addEventListener('click', function () { box.classList.remove('open'); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') box.classList.remove('open'); });
+  })();
+</script>
 
 </body>
 </html>
