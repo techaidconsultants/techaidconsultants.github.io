@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us | Tech Aid Consultants – Engineers, Cost Estimators &amp; Project Managers</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <meta name="description" content="Tech Aid Consultants is a team of engineers, cost estimators, planners and project managers with over 20 years on major infrastructure projects.">
+  <link rel="canonical" href="https://www.techaidconsultant.com/about.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Tech Aid Consultants">
+  <meta property="og:title" content="About Us | Tech Aid Consultants – Engineers, Cost Estimators &amp; Project Managers">
+  <meta property="og:description" content="Tech Aid Consultants is a team of engineers, cost estimators, planners and project managers with over 20 years on major infrastructure projects.">
+  <meta property="og:url" content="https://www.techaidconsultant.com/about.html">
+  <meta property="og:image" content="https://www.techaidconsultant.com/images/logo.jpg.png">
+  <style>
+    /* About page */
+    .page-header h1 { color: #fff; }
+    .about-intro { display: grid; grid-template-columns: 1.6fr 1fr; gap: 40px; align-items: start; }
+    .about-intro p { font-size: 16px; line-height: 1.7; }
+    .lead { font-size: 18px !important; color: var(--tac-primary); font-weight: 500; }
+    .facts {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 1px;
+      background: var(--tac-border); border-radius: 8px; overflow: hidden; border: 1px solid var(--tac-border);
+    }
+    .fact { background: #fff; padding: 20px; }
+    .fact strong { display: block; font-size: 30px; color: var(--tac-primary); line-height: 1.1; }
+    .fact span { font-size: 13px; color: var(--tac-accent); }
+
+    .cap-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-top: 24px; }
+    .cap {
+      background: #fff; border: 1px solid var(--tac-border); border-top: 3px solid var(--tac-primary);
+      border-radius: 8px; padding: 20px;
+    }
+    .cap h3 { margin: 0 0 8px; font-size: 17px; }
+    .cap p { margin: 0; font-size: 14px; }
+
+    .process { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-top: 24px; counter-reset: stage; }
+    .process div { position: relative; padding: 22px 20px 20px; background: #f9fafb; border-radius: 8px; counter-increment: stage; }
+    .process div::before {
+      content: "0" counter(stage); display: block; font-size: 26px; font-weight: 700;
+      color: var(--tac-accent); opacity: 0.5; margin-bottom: 6px;
+    }
+    .process h3 { margin: 0 0 6px; font-size: 16px; }
+    .process p { margin: 0; font-size: 14px; }
+
+    .clients { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
+    .clients span {
+      padding: 8px 16px; border: 1px solid var(--tac-border); border-radius: 20px;
+      background: #fff; font-size: 14px; font-weight: 600; color: var(--tac-primary);
+    }
+
+    .values { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-top: 24px; }
+    .values div { border-left: 4px solid var(--tac-accent); padding: 4px 0 4px 16px; }
+    .values h3 { margin: 0 0 6px; font-size: 16px; }
+    .values p { margin: 0; font-size: 14px; }
+
+    .office-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: 20px; }
+    .office-row div { background: #f9fafb; border-radius: 8px; padding: 18px 20px; border-left: 4px solid var(--tac-primary); }
+    .office-row strong { display: block; color: var(--tac-primary); font-size: 16px; }
+    .office-row span { font-size: 14px; }
+
+    .team { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; margin-top: 24px; }
+    .team div { text-align: center; background: #f9fafb; border-radius: 8px; padding: 22px 14px; }
+    .team svg { display: block; margin: 0 auto 10px; }
+    .team h3 { margin: 0 0 6px; font-size: 15px; }
+    .team p { margin: 0; font-size: 13px; }
+    .cap-grid.six { grid-template-columns: repeat(3, 1fr); }
+    .markets { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 24px; }
+    .markets div { background: #fff; border: 1px solid var(--tac-border); border-left: 4px solid var(--tac-primary); border-radius: 8px; padding: 20px; }
+    .markets h3 { margin: 0 0 4px; font-size: 17px; }
+    .markets .tag { display: block; font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; color: var(--tac-accent); margin-bottom: 10px; }
+    .markets p { margin: 0; font-size: 14px; }
+    @media (max-width: 900px) {
+      .team { grid-template-columns: repeat(3, 1fr); }
+      .cap-grid.six, .markets { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 900px) {
+      .cap-grid, .values, .process { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 768px) {
+      .about-intro { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 520px) {
+      .cap-grid, .cap-grid.six, .values, .process, .markets { grid-template-columns: 1fr; }
+      .team { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
+</head>
+<body>
+
+<header class="tac-header">
+  <nav class="tac-nav">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="projects.html">Projects</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<div class="page-header">
+  <h1>About Tech Aid Consultants</h1>
+  <p>Engineers, cost estimators and project managers serving Pakistan, the UAE and Australia</p>
+</div>
+
+<div class="tac-container">
+
+  <section class="about-section">
+    <div class="about-intro">
+      <div>
+        <h2>Who We Are</h2>
+        <p class="lead">Tech Aid Consultants (TAC) is a multidisciplinary consultancy of professional engineers, cost estimators, planners and project managers.</p>
+        <p>We provide project management, commercial and cost services for infrastructure and construction projects, working with contractors, joint ventures and project owners in Pakistan, the United Arab Emirates and Australia.</p>
+        <p>Our team has more than 20 years of experience across the project lifecycle – from feasibility and tender, through design development and construction, to completion. In Australia, this includes major motorway, rail and tunnelling projects for leading contractors and joint ventures in New South Wales, Queensland and Victoria.</p>
+      </div>
+      <div class="facts">
+        <div class="fact"><strong>20+</strong><span>years of project experience</span></div>
+        <div class="fact"><strong>10</strong><span>major Australian infrastructure projects</span></div>
+        <div class="fact"><strong>3</strong><span>markets – Pakistan, UAE, Australia</span></div>
+        <div class="fact"><strong>2</strong><span>offices – Lahore and Sharjah</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about-section">
+    <h2>Our People</h2>
+    <p>Each engagement is resourced from a core team with the disciplines the project needs.</p>
+    <div class="team">
+      <div><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#0A3D62" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 18h20M4 18V9l8-5 8 5v9M9 18v-5h6v5"/></svg><h3>Civil Engineers</h3><p>Design review and technical input across civil and structural works</p></div>
+      <div><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#0A3D62" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 7h8M8 11h2M12 11h2M16 11h0M8 15h2M12 15h2M8 18h8"/></svg><h3>Cost Estimators &amp; QSs</h3><p>Estimating, quantity take-off and cost planning</p></div>
+      <div><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#0A3D62" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5h8M3 10h12M3 15h6M3 20h14"/><path d="M19 3v4M21 5h-4"/></svg><h3>Planners &amp; Schedulers</h3><p>Primavera P6 programming and progress control</p></div>
+      <div><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#0A3D62" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="7" r="3.5"/><path d="M5 21v-1a7 7 0 0 1 14 0v1"/></svg><h3>Project Managers</h3><p>Scope, procurement, delivery and reporting</p></div>
+      <div><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#0A3D62" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3h7l5 5v13H7z"/><path d="M14 3v5h5M10 13h6M10 17h6"/></svg><h3>Contract &amp; Risk Specialists</h3><p>Contracts, subcontracts, variations and risk</p></div>
+    </div>
+  </section>
+
+  <section class="about-section">
+    <h2>What We Do</h2>
+    <p>Our services cover project management and the commercial side of delivery. <a href="services.html">See our services in detail</a>.</p>
+    <div class="cap-grid six">
+      <div class="cap">
+        <h3>Project Management</h3>
+        <p>Scope, procurement and financial management, stakeholder reporting and project systems.</p>
+      </div>
+      <div class="cap">
+        <h3>Planning &amp; Scheduling</h3>
+        <p>Primavera P6 programmes, progress tracking, critical path and delay analysis.</p>
+      </div>
+      <div class="cap">
+        <h3>Cost Planning &amp; Estimation</h3>
+        <p>Feasibility estimates, quantity surveying, tender validation and design growth tracking.</p>
+      </div>
+      <div class="cap">
+        <h3>Project Cost Reconciliation</h3>
+        <p>Separating cost movement on alliance and collaborative contracts by source.</p>
+      </div>
+      <div class="cap">
+        <h3>Contract Management</h3>
+        <p>Head contract and subcontract administration, packages, claims and variations.</p>
+      </div>
+      <div class="cap">
+        <h3>Risk &amp; Value Management</h3>
+        <p>Risk registers, contingency analysis and value management workshops.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="about-section">
+    <h2>Markets We Serve</h2>
+    <div class="markets">
+      <div>
+        <h3>Australia</h3><span class="tag">Infrastructure</span>
+        <p>Major motorway, rail and tunnelling projects for leading contractors and joint ventures in NSW, Queensland and Victoria.</p>
+      </div>
+      <div>
+        <h3>United Arab Emirates</h3><span class="tag">Sharjah office</span>
+        <p>Project management, estimation, planning and commercial support for construction and infrastructure clients.</p>
+      </div>
+      <div>
+        <h3>Pakistan</h3><span class="tag">Lahore office</span>
+        <p>Project management, estimation, planning and commercial support for local and international clients.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="about-section">
+    <h2>How We Work</h2>
+    <div class="process">
+      <div>
+        <h3>Understand</h3>
+        <p>Review the scope, contract and project objectives with the client team.</p>
+      </div>
+      <div>
+        <h3>Plan</h3>
+        <p>Agree deliverables, reporting formats, timeframes and the team required.</p>
+      </div>
+      <div>
+        <h3>Deliver</h3>
+        <p>Carry out the work with regular contact and quick turnaround on priorities.</p>
+      </div>
+      <div>
+        <h3>Report</h3>
+        <p>Provide clear, well-documented outputs the project team can act on.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="about-section">
+    <h2>Clients We Have Worked With</h2>
+    <p>TAC has delivered services to contractors and joint ventures including:</p>
+    <div class="clients">
+      <span>CPB Contractors</span>
+      <span>John Holland</span>
+      <span>Thiess</span>
+      <span>Ghella</span>
+      <span>Acciona</span>
+      <span>Samsung C&amp;T</span>
+      <span>Seymour Whyte</span>
+    </div>
+  </section>
+
+  <section class="about-section">
+    <h2>Our Approach</h2>
+    <div class="values">
+      <div>
+        <h3>Open communication</h3>
+        <p>Regular contact with the client's project team throughout the engagement.</p>
+      </div>
+      <div>
+        <h3>Responsiveness</h3>
+        <p>Flexible resourcing and quick turnaround on priority deliverables.</p>
+      </div>
+      <div>
+        <h3>Transparency</h3>
+        <p>A clear basis for our work, with assumptions and information sources stated.</p>
+      </div>
+      <div>
+        <h3>Long-term relationships</h3>
+        <p>Many of our clients have engaged TAC on more than one project.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="about-section">
+    <h2>Our Offices</h2>
+    <div class="office-row">
+      <div><strong>Pakistan</strong><span>152 J EME DHA, Multan Road, Lahore</span></div>
+      <div><strong>United Arab Emirates</strong><span>Saif Zone, Sharjah</span></div>
+    </div>
+  </section>
+</div>
+
+<section class="tac-container cta-section">
+  <h2>Discuss Your Project</h2>
+  <p>Talk to us about how TAC can support your project.</p>
+  <a href="contact.html" class="btn">Contact Us</a>
+</section>
+
+<footer>
+  <div>
+    <p><strong>Tech Aid Consultants</strong></p>
+    <p>For all inquiries, please use our <a href="contact.html">Contact Form</a>.</p>
+    <p>© 2026 Tech Aid Consultants. All rights reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>
